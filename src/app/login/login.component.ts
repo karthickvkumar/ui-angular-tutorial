@@ -51,10 +51,6 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onClickLogin(): void {
-
-  }
-
   displayName(): Type.Model.LoginForm {
     return this.data
   }

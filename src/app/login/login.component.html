@@ -1,11 +1,11 @@
 <div class="login-form">
     <label>Enter UserName:</label>
-    <input type="text" [(ngModel)]="data.username" placeholder="Enter your user name.." />
+    <input type="text" name="username" [(ngModel)]="data.username" placeholder="Enter your user name.." />
     <br />
     <label>Enter Password:</label>
     <input type="password" [(ngModel)]="data.password" placeholder="Enter your password.." />
     <br />
-    <button class="login-btn" (click)="onClickLogin()">Login</button>
+    <button class="login-btn">Login</button>
     <br>
     <h1>The entered user name is {{data.username}}</h1>
     <h1>The entered password is {{data.password}}</h1>

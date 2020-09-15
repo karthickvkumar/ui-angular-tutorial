@@ -1,0 +1,49 @@
+<div class="register-form">
+    <label>Enter your Name : </label>
+    <input type="text" placeholder="Enter your name.." class="align" [(ngModel)]="register.name" />
+    <br>
+    <label>Enter your Email : </label>
+    <input type="text" placeholder="Enter your email.." class="align" [(ngModel)]="register.email" />
+    <br>
+    <label>Enter your password : </label>
+    <input type="password" placeholder="Enter your password.." class="align" [(ngModel)]="register.password" />
+    <br>
+    <label>Enter your date of birth : </label>
+    <input type="date" class="align" [(ngModel)]="register.dob" />
+    <br>
+    <div class="align">
+        <label>Select your gender : </label>
+        <input type="radio" name="gender" value="male" (change)="onSelectGender($event)" />Male
+        <input type="radio" name="gender" value="female" (change)="onSelectGender($event)" />Female
+        <input type="radio" name="gender" value="others" (change)="onSelectGender($event)" />Others
+    </div>
+    <br>
+    <div class="align">
+        <label>Select your hobbies : </label>
+        <input type="checkbox" value="cricket" (change)="onSelectHobbies($event)" />Cricket
+        <input type="checkbox" value="football" (change)="onSelectHobbies($event)" />Football
+        <input type="checkbox" value="hockey" (change)="onSelectHobbies($event)" />Hockey
+        <input type="checkbox" value="vollyball" (change)="onSelectHobbies($event)" />Vollyball
+        <input type="checkbox" value="chess" (change)="onSelectHobbies($event)" />Chess
+    </div>
+    <br>
+    <div class="align">
+        <label>Enter your address :</label>
+        <textarea placeholder="Enter your street name.." [(ngModel)]="register.address"></textarea>
+    </div>
+    <br>
+    <div class="align">
+        <label>Select your city : </label>
+        <select (change)="onSelectCity($event)">
+            <option disabled>--Please select any city--</option>
+            <option>Chennai</option>
+            <option>Madurai</option>
+            <option>Trichy</option>
+            <option>Coimbatore</option>
+            <option>Erode</option>
+            <option>Salem</option>
+        </select>
+    </div>
+    <br>
+    <button (click)="onRegister()">Register</button>
+</div>
