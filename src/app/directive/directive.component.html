@@ -1,0 +1,10 @@
+<div style="margin-left: 30px;">
+    <h1 *ngIf="visible">This is a structural directive</h1>
+    <button (click)="show()">Show</button>
+    <button (click)="hide()">Hide</button>
+    <button (click)="toggle()">Hide/Show</button>
+    <h2>List of Students</h2>
+    <div *ngFor="let student of studentList" class="student-div">
+        <h3>Name: {{student.name}}, Class: {{student.class}}, Score: {{student.score}}</h3>
+    </div>
+</div>
