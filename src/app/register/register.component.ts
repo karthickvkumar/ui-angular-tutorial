@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgControlStatus } from '@angular/forms';
-import { RegisterForm } from './register-model';
+import * as Type from './register-model';
 
 @Component({
   selector: 'app-register',
@@ -9,7 +9,7 @@ import { RegisterForm } from './register-model';
 })
 export class RegisterComponent implements OnInit {
 
-  register: RegisterForm = {
+  register: Type.Model.RegisterForm = {
     name: '',
     email: '',
     password: '',
@@ -20,13 +20,85 @@ export class RegisterComponent implements OnInit {
     city: ''
   }
 
+  error: Type.Model.Error = {
+    name: false,
+    email: false,
+    password: false,
+    dob: false,
+    gender: false,
+    hobbies: false,
+    address: false,
+    city: false
+  }
+
+  userList: Type.Model.RegisterForm[] = [];
+
   constructor() { }
 
   ngOnInit() {
   }
 
   onRegister() {
-    console.log(this.register)
+    if (this.register.name == '') {
+      this.error.name = true;
+    } else {
+      this.error.name = false;
+    }
+
+    if (this.register.email == '') {
+      this.error.email = true;
+    } else {
+      this.error.email = false;
+    }
+
+    if (this.register.password == '') {
+      this.error.password = true;
+    } else {
+      this.error.password = false;
+    }
+
+    if (this.register.dob == '') {
+      this.error.dob = true;
+    } else {
+      this.error.dob = false;
+    }
+
+    if (this.register.gender == '') {
+      this.error.gender = true;
+    } else {
+      this.error.gender = false;
+    }
+
+    if (this.register.hobbies.length == 0) {
+      this.error.hobbies = true;
+    } else {
+      this.error.hobbies = false;
+    }
+
+    if (this.register.address == '') {
+      this.error.address = true;
+    } else {
+      this.error.address = false;
+    }
+
+    if (this.register.city == '') {
+      this.error.city = true;
+    } else {
+      this.error.city = false;
+    }
+
+    this.userList.push(this.register);
+    this.register = {
+      name: '',
+      email: '',
+      password: '',
+      dob: '',
+      gender: '',
+      hobbies: [],
+      address: '',
+      city: ''
+    }
+
   }
 
   onSelectGender(event) {

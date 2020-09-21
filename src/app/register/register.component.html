@@ -1,15 +1,19 @@
 <div class="register-form">
     <label>Enter your Name : </label>
     <input type="text" placeholder="Enter your name.." class="align" [(ngModel)]="register.name" />
+    <span class="error-msg" *ngIf="error.name">Incorrect, Please enter your name</span>
     <br>
     <label>Enter your Email : </label>
     <input type="text" placeholder="Enter your email.." class="align" [(ngModel)]="register.email" />
+    <span class="error-msg" *ngIf="error.email">Incorrect, Please enter your email</span>
     <br>
     <label>Enter your password : </label>
     <input type="password" placeholder="Enter your password.." class="align" [(ngModel)]="register.password" />
+    <span class="error-msg" *ngIf="error.password">Incorrect, Please enter your password</span>
     <br>
     <label>Enter your date of birth : </label>
     <input type="date" class="align" [(ngModel)]="register.dob" />
+    <span class="error-msg" *ngIf="error.dob">Incorrect, Please select your date of birth</span>
     <br>
     <div class="align">
         <label>Select your gender : </label>
@@ -17,6 +21,7 @@
         <input type="radio" name="gender" value="female" (change)="onSelectGender($event)" />Female
         <input type="radio" name="gender" value="others" (change)="onSelectGender($event)" />Others
     </div>
+    <span class="error-msg" *ngIf="error.gender">Incorrect, Please select your gender</span>
     <br>
     <div class="align">
         <label>Select your hobbies : </label>
@@ -26,10 +31,12 @@
         <input type="checkbox" value="vollyball" (change)="onSelectHobbies($event)" />Vollyball
         <input type="checkbox" value="chess" (change)="onSelectHobbies($event)" />Chess
     </div>
+    <span class="error-msg" *ngIf="error.hobbies">Incorrect, Please select any one hobbies</span>
     <br>
     <div class="align">
         <label>Enter your address :</label>
         <textarea placeholder="Enter your street name.." [(ngModel)]="register.address"></textarea>
+        <span class="error-msg" *ngIf="error.address">Incorrect, Please enter your address</span>
     </div>
     <br>
     <div class="align">
@@ -44,6 +51,32 @@
             <option>Salem</option>
         </select>
     </div>
+    <span class="error-msg" *ngIf="error.city">Incorrect, Please select your city</span>
     <br>
     <button (click)="onRegister()">Register</button>
+    <table id="customers">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>DOB</th>
+                <th>Gender</th>
+                <th>Address</th>
+                <th>City</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of userList">
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.dob}}</td>
+                <td>{{user.gender}}</td>
+                <td>{{user.address}}</td>
+                <td>{{user.city}}</td>
+            </tr>
+            <tr *ngIf="userList.length == 0">
+                <td colspan="6">No User Found</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
