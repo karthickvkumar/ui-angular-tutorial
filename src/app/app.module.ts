@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { DirectiveComponent } from './directive/directive.component';
+import { TimesheetComponent } from './timesheet/timesheet.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { DirectiveComponent } from './directive/directive.component';
     HeaderComponent,
     LoginComponent,
     RegisterComponent,
-    DirectiveComponent
+    DirectiveComponent,
+    TimesheetComponent
   ],
   imports: [
     BrowserModule,

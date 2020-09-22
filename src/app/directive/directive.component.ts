@@ -23,7 +23,7 @@ export class DirectiveComponent implements OnInit {
     {
       name: 'Mr.C',
       class: '5th',
-      score: 50
+      score: 30
     },
     {
       name: 'Mr.D',

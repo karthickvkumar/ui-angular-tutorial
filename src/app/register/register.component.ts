@@ -93,7 +93,7 @@ export class RegisterComponent implements OnInit {
       email: '',
       password: '',
       dob: '',
-      gender: '',
+      gender: null,
       hobbies: [],
       address: '',
       city: ''

@@ -1,0 +1,24 @@
+<div class="sheet">
+    <h2>Time Sheet Page</h2>
+    <label>Select In Time</label>
+    <input type="time" class="space" [(ngModel)]="timeSheet.inTime" (focus)="onFocus($event)" (blur)="onBlur($event)"
+        name="inTime" />
+    <span class="error-msg" *ngIf="error.inTime">Invalid In Time</span>
+    <br>
+    <label>Select Out Time</label>
+    <input type="time" class="space" [(ngModel)]="timeSheet.outTime" (focus)="onFocus($event)" (blur)="onBlur($event)"
+        name="outTime" />
+    <span class="error-msg" *ngIf="error.outTime">Invalid Out Time</span>
+    <br>
+    <label>Select Date</label>
+    <input type="date" class="space" [(ngModel)]="timeSheet.date" (focus)="onFocus($event)" (blur)="onBlur($event)"
+        name="date" />
+    <span class="error-msg" *ngIf="error.date">Invalid Date Time</span>
+    <br>
+    <label>Work Details</label>
+    <textarea placeholder="Type your work details" [(ngModel)]="timeSheet.workDetail" (focus)="onFocus($event)"
+        (blur)="onBlur($event)" name="workDetail"></textarea>
+    <span class="error-msg" *ngIf="error.workDetail">Invalid Work Detail</span>
+    <br>
+    <button class="btn" (click)="submitTimeSheet()">Submit Time Sheet</button>
+</div>

@@ -4,7 +4,14 @@
     <button (click)="hide()">Hide</button>
     <button (click)="toggle()">Hide/Show</button>
     <h2>List of Students</h2>
-    <div *ngFor="let student of studentList" class="student-div">
+    <!-- <div *ngFor="let student of studentList" class="student-div"
+        [ngStyle]="{'color': student.score < 35 ? 'red' : 'green'}">
+        <h3>Name: {{student.name}}, Class: {{student.class}}, Score: {{student.score}}</h3>
+    </div> -->
+
+    <!-- ng class -->
+    <div *ngFor="let student of studentList"
+        [ngClass]="{'fail' : student.score < 35 ? true : false, 'pass' : student.score > 35 ? true : false}">
         <h3>Name: {{student.name}}, Class: {{student.class}}, Score: {{student.score}}</h3>
     </div>
 </div>
