@@ -21,4 +21,30 @@
     <span class="error-msg" *ngIf="error.workDetail">Invalid Work Detail</span>
     <br>
     <button class="btn" (click)="submitTimeSheet()">Submit Time Sheet</button>
+    <h2>Time Sheet Info</h2>
+    <table id="timesheet">
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>In Time</th>
+                <th>Out Time</th>
+                <th>Date</th>
+                <th>Work Details</th>
+                <th>Option</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let info of timeSheetList; let sno = index">
+                <td>{{sno + 1}}</td>
+                <td>{{info.inTime}}</td>
+                <td>{{info.outTime}}</td>
+                <td>{{info.date}}</td>
+                <td>{{info.workDetail}}</td>
+                <td><button class="btn" (click)="onDeleteRow(sno)">Delete</button></td>
+            </tr>
+            <tr *ngIf="timeSheetList.length == 0">
+                <td colspan="6">There is not time sheet Record</td>
+            </tr>
+        </tbody>
+    </table>
 </div>

@@ -15,6 +15,8 @@ export class TimesheetComponent implements OnInit {
     workDetail: ''
   }
 
+  timeSheetList: Type.Model.TimeSheetForm[] = [];
+
   error: Type.Model.ErrorForm = {
     inTime: false,
     outTime: false,
@@ -41,5 +43,17 @@ export class TimesheetComponent implements OnInit {
     this.error.outTime = this.timeSheet.outTime == '' ? true : false;
     this.error.date = this.timeSheet.date == '' ? true : false;
     this.error.workDetail = this.timeSheet.workDetail == '' ? true : false;
+
+    this.timeSheetList.push(this.timeSheet);
+    this.timeSheet = {
+      inTime: '',
+      outTime: '',
+      date: '',
+      workDetail: ''
+    }
+  }
+
+  onDeleteRow(sno) {
+    this.timeSheetList.splice(sno, 1);
   }
 }
