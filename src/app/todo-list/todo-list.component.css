@@ -1,0 +1,14 @@
+.todo{
+    margin: 15px;
+}
+.text{
+    margin-right: 20px;
+}
+.btn{
+    margin-right: 20px;
+}
+.complete{
+    color: green;
+    text-decoration: line-through;
+    opacity: 0.5;
+}

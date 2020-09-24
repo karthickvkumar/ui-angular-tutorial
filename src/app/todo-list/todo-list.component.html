@@ -1,0 +1,13 @@
+<div class="todo">
+    <h2>To-DO List Items</h2>
+    <input type="text" [(ngModel)]="todoMessage.text" placeholder="Enter your todo..." />
+    <button (click)="addToDo()">Add ToDo</button>
+    <br>
+    <ol>
+        <li *ngFor="let todo of todoList; let index = index;">
+            <b class="text" [ngClass]="{'complete': todo.isCompleted}">{{todo.text}}</b>
+            <button class="btn" (click)="onComplete(todo)">{{todo.isCompleted ? 'Complete' : 'Incomplete'}}</button>
+            <button class="btn" (click)="onDelete(index)">Delete</button>
+        </li>
+    </ol>
+</div>

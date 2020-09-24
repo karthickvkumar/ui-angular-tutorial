@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { DirectiveComponent } from './directive/directive.component';
 import { TimesheetComponent } from './timesheet/timesheet.component';
+import { TodoListComponent } from './todo-list/todo-list.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { TimesheetComponent } from './timesheet/timesheet.component';
     LoginComponent,
     RegisterComponent,
     DirectiveComponent,
-    TimesheetComponent
+    TimesheetComponent,
+    TodoListComponent
   ],
   imports: [
     BrowserModule,
