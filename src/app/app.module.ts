@@ -11,6 +11,9 @@ import { DirectiveComponent } from './directive/directive.component';
 import { TimesheetComponent } from './timesheet/timesheet.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 
+import { ApiService } from './api.service';
+import { HttpClientModule } from "@angular/common/http";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,9 +27,10 @@ import { TodoListComponent } from './todo-list/todo-list.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
