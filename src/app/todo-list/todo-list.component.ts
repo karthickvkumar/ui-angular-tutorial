@@ -13,6 +13,11 @@ export class TodoListComponent implements OnInit {
     isCompleted: false
   };
 
+  userForm: any = {
+    name: '',
+    job: ''
+  }
+
   todoList: any[] = [];
 
   constructor(private api: ApiService) { }
@@ -25,6 +30,27 @@ export class TodoListComponent implements OnInit {
       console.log(resposne)
     }, (error) => {
       console.log(error)
+    })
+  }
+
+  submitForm() {
+    // this.api.postUserInfo(this.userForm).subscribe((resposne) => {
+    //   console.log(resposne)
+    // }, (error) => {
+    //   console.log(error)
+    // })
+    this.api.updateUser(this.userForm).subscribe((resposne) => {
+      console.log(resposne)
+    }, (error) => {
+      console.log(error)
+    })
+  }
+
+  onDeleteUser() {
+    this.api.deleteUser().subscribe((res) => {
+      console.log(res)
+    }, (err) => {
+      console.log(err)
     })
   }
 

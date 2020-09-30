@@ -4,6 +4,16 @@
     <button (click)="addToDo()">Add ToDo</button>
     <br>
     <button (click)="listUser()">List the Users</button>
+    <br>
+    <label>Enter your name:</label>
+    <input type="text" placeholder="Enter your name.." [(ngModel)]="userForm.name" />
+    <br>
+    <label>Enter your job:</label>
+    <input type="text" placeholder="Enter your job.." [(ngModel)]="userForm.job" />
+    <br>
+    <button (click)="submitForm()">Submit</button>
+    <br>
+    <button (click)="onDeleteUser()">Delete User</button>
     <ol>
         <li *ngFor="let todo of todoList; let index = index;">
             <b class="text" [ngClass]="{'complete': todo.isCompleted}">{{todo.text}}</b>
