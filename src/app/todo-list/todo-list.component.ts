@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
+import * as Type from './todo.model';
 
 @Component({
   selector: 'app-todo-list',
@@ -20,14 +21,17 @@ export class TodoListComponent implements OnInit {
 
   todoList: any[] = [];
 
+  userList :any[] = [];
+
   constructor(private api: ApiService) { }
 
   ngOnInit() {
   }
 
   listUser() {
-    this.api.getUserList().subscribe((resposne) => {
+    this.api.getUserList().subscribe((resposne: Type.Model.ResponseData) => {
       console.log(resposne)
+      this.userList = resposne.data;
     }, (error) => {
       console.log(error)
     })

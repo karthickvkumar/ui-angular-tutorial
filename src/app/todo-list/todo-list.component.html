@@ -22,3 +22,13 @@
         </li>
     </ol>
 </div>
+<div>
+    <h2>User List</h2>
+    <div *ngIf="userList.length == 0">
+        <h3>No user found</h3>
+    </div>
+    <div *ngFor="let user of userList">
+        <span>The user name is {{user.first_name}} {{user.last_name}}</span>
+        <br>
+    </div>
+</div>
