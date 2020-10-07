@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as Type from './login-model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -46,9 +47,15 @@ export class LoginComponent implements OnInit {
     { name: 'mr.c', score: 40 },
   ]
 
-  constructor() { }
+  constructor(private router : Router) { }
 
   ngOnInit(): void {
+  }
+
+  navigate(){
+    if(true){
+      this.router.navigateByUrl('/todo-list')
+    }
   }
 
   displayName(): Type.Model.LoginForm {
