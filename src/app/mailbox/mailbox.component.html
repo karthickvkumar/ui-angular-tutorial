@@ -1,0 +1,14 @@
+<div>
+    <div class="header">This is a Header</div>
+    <div class="wrapper">
+        <div class="sidebar">
+            <button [routerLink]="['/mail']" [routerLinkActive]="['active-btn']"  [routerLinkActiveOptions]="{exact:true}">Inbox</button>
+            <button  [routerLink]="['/mail/sent']" [routerLinkActive]="['active-btn']">Sent</button>
+            <button  [routerLink]="['/mail/stared']" [routerLinkActive]="['active-btn']">Stared</button>
+            <button  [routerLink]="['/mail/junk']" [routerLinkActive]="['active-btn']">Junk</button>
+        </div>
+        <div class="content">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

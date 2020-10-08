@@ -5,10 +5,23 @@ import { LoginComponent } from './login/login.component';
 import {RegisterComponent} from './register/register.component';
 import {TimesheetComponent} from './timesheet/timesheet.component';
 import {TodoListComponent} from './todo-list/todo-list.component';
+import {MailboxComponent} from './mailbox/mailbox.component';
+import {InboxComponent} from './inbox/inbox.component';
+import {SentComponent} from './sent/sent.component';
+import {StaredComponent} from './stared/stared.component';
+import {JunkComponent} from './junk/junk.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent },
   {path: 'register', component: RegisterComponent },
+  {path: 'mail', component: MailboxComponent, 
+    children:[
+      {path: '', component: InboxComponent},
+      {path: 'sent', component: SentComponent},
+      {path: 'stared', component: StaredComponent},
+      {path: 'junk', component: JunkComponent},
+    ]
+  },
   {path: 'time-sheet', component: TimesheetComponent},
   {path: 'todo-list',  component: TodoListComponent}
 ];

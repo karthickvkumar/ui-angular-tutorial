@@ -13,6 +13,11 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 
 import { ApiService } from './api.service';
 import { HttpClientModule } from "@angular/common/http";
+import { MailboxComponent } from './mailbox/mailbox.component';
+import { InboxComponent } from './inbox/inbox.component';
+import { SentComponent } from './sent/sent.component';
+import { StaredComponent } from './stared/stared.component';
+import { JunkComponent } from './junk/junk.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,12 @@ import { HttpClientModule } from "@angular/common/http";
     RegisterComponent,
     DirectiveComponent,
     TimesheetComponent,
-    TodoListComponent
+    TodoListComponent,
+    MailboxComponent,
+    InboxComponent,
+    SentComponent,
+    StaredComponent,
+    JunkComponent
   ],
   imports: [
     BrowserModule,
