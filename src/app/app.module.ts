@@ -18,6 +18,7 @@ import { InboxComponent } from './inbox/inbox.component';
 import { SentComponent } from './sent/sent.component';
 import { StaredComponent } from './stared/stared.component';
 import { JunkComponent } from './junk/junk.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { JunkComponent } from './junk/junk.component';
     InboxComponent,
     SentComponent,
     StaredComponent,
-    JunkComponent
+    JunkComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
