@@ -21,3 +21,6 @@ input{
     background-color: blueviolet;
     color: white;
 }
+.bg-primary {
+    background-color: red !important;
+}
