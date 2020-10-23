@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as Type from './timesheet-model';
+import {DataSharingService} from '../data-sharing.service';
 
 @Component({
   selector: 'app-timesheet',
@@ -23,7 +24,7 @@ export class TimesheetComponent implements OnInit {
     date: false,
     workDetail: false
   }
-  constructor() { }
+  constructor(private dataSharing : DataSharingService) { }
 
   ngOnInit() {
   }
@@ -43,6 +44,8 @@ export class TimesheetComponent implements OnInit {
     this.error.outTime = this.timeSheet.outTime == '' ? true : false;
     this.error.date = this.timeSheet.date == '' ? true : false;
     this.error.workDetail = this.timeSheet.workDetail == '' ? true : false;
+    
+    this.dataSharing.updateInfo(this.timeSheet);
 
     this.timeSheetList.push(this.timeSheet);
     this.timeSheet = {

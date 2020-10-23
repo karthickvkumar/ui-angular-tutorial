@@ -1,0 +1,12 @@
+<h2>This is a Parent Component</h2>
+<input type="text" placeholder="Enter a value" [(ngModel)]="message"/>
+<br>
+<button (click)="onClick()">Show Child Data</button>
+<h3>Value : {{message}}</h3>
+<span>Received message from Child : {{reveivedData}}</span>
+<br>
+<h2>Time Sheet Info</h2>
+<h3>InTime: {{timesheet.inTime}}</h3>
+<h3>OutTime: {{timesheet.outTime}}</h3>
+<h3>Date : {{timesheet.date}}</h3>
+<app-child-one [content]="message" (sendMessage)="receiveMessage($event)"></app-child-one>

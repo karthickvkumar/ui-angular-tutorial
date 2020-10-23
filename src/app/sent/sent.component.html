@@ -1,1 +1,17 @@
 <h2>This is a Sent Page</h2>
+<table id="customers">
+    <thead>
+        <tr>
+          <th>Name</th>
+          <th>Grade</th>
+          <th>Score</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr appMouseInteraction [studentDetail]="student.score" *ngFor="let student of studentList">
+            <td>{{student.name}}</td>
+            <td>{{student.grade}}</td>
+            <td>{{student.score}}</td>
+        </tr>
+    </tbody>
+  </table>

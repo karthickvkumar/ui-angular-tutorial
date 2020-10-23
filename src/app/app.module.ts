@@ -19,6 +19,10 @@ import { SentComponent } from './sent/sent.component';
 import { StaredComponent } from './stared/stared.component';
 import { JunkComponent } from './junk/junk.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ParentOneComponent } from './parent-one/parent-one.component';
+import { ChildOneComponent } from './child-one/child-one.component';
+import {DataSharingService} from './data-sharing.service';
+import { MouseInteractionDirective } from './mouse-interaction.directive';
 
 @NgModule({
   declarations: [
@@ -34,7 +38,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     SentComponent,
     StaredComponent,
     JunkComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ParentOneComponent,
+    ChildOneComponent,
+    MouseInteractionDirective
   ],
   imports: [
     BrowserModule,
@@ -42,7 +49,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     FormsModule,
     HttpClientModule
   ],
-  providers: [ApiService],
+  providers: [ApiService, DataSharingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

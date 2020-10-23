@@ -26,6 +26,7 @@ export class TodoListComponent implements OnInit {
   constructor(private api: ApiService) { }
 
   ngOnInit() {
+    this.listUser();
   }
 
   listUser() {

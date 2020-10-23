@@ -10,6 +10,7 @@ import {InboxComponent} from './inbox/inbox.component';
 import {SentComponent} from './sent/sent.component';
 import {StaredComponent} from './stared/stared.component';
 import {JunkComponent} from './junk/junk.component';
+import {ParentOneComponent} from './parent-one/parent-one.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
@@ -25,6 +26,7 @@ const routes: Routes = [
   },
   {path: 'time-sheet', component: TimesheetComponent},
   {path: 'todo-list',  component: TodoListComponent},
+  {path: 'parent', component: ParentOneComponent},
   {path: '**', component: PageNotFoundComponent}
 ];
 

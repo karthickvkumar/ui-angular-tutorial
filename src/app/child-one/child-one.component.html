@@ -1,0 +1,9 @@
+<h2>child-one works!</h2>
+<h3>This is displayed in Child value : {{informaton}}</h3>
+<br>
+<h3>Sending value to Parent...</h3>
+<input type="text" placeholder="Type any Information" [(ngModel)]="inputData" (ngModelChange)="onChangeInput()"/>
+<br>
+<button (click)="onSendMessage()">Send Message</button>
+<br>
+<span>Print message : {{inputData}}</span>
